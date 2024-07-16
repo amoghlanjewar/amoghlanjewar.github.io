@@ -1,0 +1,211 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--container-background);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+    color: var(--heading-color);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--subtitle-color);
+}
+
+nav {
+    background-color: var(--nav-background);
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+    font-size: 1.1em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--nav-hover-color);
+    transform: scale(1.1);
+}
+
+.cv-button {
+    background-color: var(--cv-button-bg);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    color: var(--cv-button-text);
+}
+
+.cv-button:hover,
+.cv-button:focus {
+    background-color: var(--cv-button-hover-bg);
+}
+
+main h2 {
+    border-bottom: 2px solid var(--heading-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: var(--heading-color);
+}
+
+main h3 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: var(--heading-color);
+}
+
+main p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+main ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+    border-top: 1px solid var(--footer-border-color);
+}
+
+footer p {
+    color: var(--footer-text-color);
+}
+
+/* Areas of Study Styles */
+#areas-of-study ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#areas-of-study ul li {
+    background-color: var(--study-bg);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--study-text);
+    transition: background-color 0.3s;
+}
+
+#areas-of-study ul li:hover,
+#areas-of-study ul li:focus {
+    background-color: var(--study-hover-bg);
+}
+
+/* Dark Mode */
+.dark-mode {
+    --background-color: #121212;
+    --container-background: #1a1a1a;
+    --text-color: #ffffff;
+    --heading-color: #ff6600;
+    --subtitle-color: #bbbbbb;
+    --nav-background: #333;
+    --nav-text-color: #ffffff;
+    --nav-hover-color: #ff6600;
+    --cv-button-bg: #ff6600;
+    --cv-button-text: #ffffff;
+    --cv-button-hover-bg: #e65c00;
+    --heading-color: #ff6600;
+    --footer-border-color: #444;
+    --footer-text-color: #bbbbbb;
+    --study-bg: #ff6600;
+    --study-text: #121212;
+    --study-hover-bg: #e65c00;
+}
+
+.dark-mode .container {
+    background-color: var(--container-background);
+}
+
+.dark-mode header h1 {
+    color: var(--heading-color);
+}
+
+.dark-mode .subtitle {
+    color: var(--subtitle-color);
+}
+
+.dark-mode nav {
+    background-color: var(--nav-background);
+}
+
+.dark-mode nav ul li a {
+    color: var(--nav-text-color);
+}
+
+.dark-mode .cv-button {
+    background-color: var(--cv-button-bg);
+    color: var(--cv-button-text);
+}
+
+.dark-mode main h2 {
+    border-bottom-color: var(--heading-color);
+}
+
+.dark-mode footer {
+    border-top-color: var(--footer-border-color);
+}
+
+/* Button to toggle Dark Mode */
+.dark-mode-toggle {
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #e0e0e0;
+}
