@@ -11,7 +11,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    position: relative;
+    perspective: 1000px;
 }
 
 /* Light Mode */
@@ -26,16 +26,6 @@ body.dark-mode {
     color: #ffedd5;
 }
 
-#particle-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.5;
-}
-
 .navbar {
     background: linear-gradient(135deg, #1e3a8a, #3b82f6);
     padding: 1.2rem 2rem;
@@ -48,22 +38,13 @@ body.dark-mode {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: #ffedd5;
-    cursor: pointer;
-}
-
-.nav-links {
+.navbar .nav-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
 }
 
-.nav-links a {
+.navbar a {
     color: #ffedd5;
     text-decoration: none;
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -71,12 +52,13 @@ body.dark-mode {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav-links a:hover {
+.navbar a:hover {
     background-color: rgba(255, 237, 213, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .toggle-mode {
@@ -104,7 +86,16 @@ body.dark-mode {
     justify-content: center;
     text-align: center;
     position: relative;
-    z-index: 1;
+    transform: translateZ(0);
+    transition: transform 0.5s ease;
+}
+
+.section:nth-child(odd) {
+    transform: translateZ(-5px);
+}
+
+.section:nth-child(even) {
+    transform: translateZ(5px);
 }
 
 body.dark-mode .section {
@@ -113,6 +104,17 @@ body.dark-mode .section {
 
 #home {
     position: relative;
+    overflow: hidden;
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .profile-container {
@@ -124,7 +126,6 @@ body.dark-mode .section {
     border-radius: 50%;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s ease;
-    z-index: 2000;
 }
 
 body.dark-mode .profile-container {
@@ -144,7 +145,6 @@ body.dark-mode .profile-container {
     -webkit-user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
-    z-index: 2000;
 }
 
 .profile-photo:hover {
@@ -343,8 +343,6 @@ footer {
     font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 500;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 2;
 }
 
 /* Animations */
@@ -389,49 +387,12 @@ footer {
     animation: fadeInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Mobile Menu */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block;
-        position: absolute;
-        left: 2rem;
-        top: 1.2rem;
-        z-index: 1001;
-    }
-
-    .nav-links {
-        display: none;
+    .navbar .nav-links {
         flex-direction: column;
         align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-        padding-top: 5rem;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        display: flex !important; /* Ensure override */
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-    }
-
-    .toggle-mode {
-        right: 5rem;
-    }
-
-    .section {
-        padding: 8rem 1.5rem;
-    }
-
-    #home {
-        padding-top: 7rem; /* Clear navbar */
+        gap: 1.5rem;
     }
 
     .section h1 {
@@ -446,8 +407,13 @@ footer {
         font-size: 1.1rem;
     }
 
-    .profile-container, .profile-photo {
-        z-index: 2000;
+    .section {
+        padding: 8rem 1.5rem;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
     }
 
     .contact-info {
@@ -457,12 +423,12 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .section {
-        padding: 6rem 1rem;
+    .navbar .nav-links {
+        gap: 1rem;
     }
 
-    #home {
-        padding-top: 7rem; /* Clear navbar */
+    .section {
+        padding: 6rem 1rem;
     }
 
     .section h1 {
@@ -478,7 +444,7 @@ footer {
     }
 
     .profile-photo {
-        width: 200px; /* No 120px override */
-        height: 200px;
+        width: 120px;
+        height: 120px;
     }
 }
