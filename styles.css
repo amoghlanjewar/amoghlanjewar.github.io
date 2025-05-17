@@ -116,6 +116,7 @@ body.dark-mode .section {
 
 #home {
     position: relative;
+    padding-top: 5rem;
 }
 
 .profile-container {
@@ -127,7 +128,7 @@ body.dark-mode .section {
     border-radius: 50%;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s ease;
-    z-index: 2;
+    z-index: 2000;
 }
 
 body.dark-mode .profile-container {
@@ -147,7 +148,7 @@ body.dark-mode .profile-container {
     -webkit-user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
-    z-index: 2;
+    z-index: 2000;
 }
 
 .profile-photo:hover {
@@ -426,14 +427,12 @@ footer {
         padding-top: 5rem;
         z-index: 1000;
         opacity: 0;
-        transform: translateX(-100%);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition: opacity 0.3s ease;
     }
 
     .nav-links.active {
         display: flex;
         opacity: 1;
-        transform: translateX(0);
     }
 
     .nav-links a {
@@ -449,6 +448,10 @@ footer {
         padding: 8rem 1.5rem;
     }
 
+    #home {
+        padding-top: 7rem;
+    }
+
     .section h1 {
         font-size: 2.8rem;
     }
@@ -462,7 +465,7 @@ footer {
     }
 
     .profile-container, .profile-photo {
-        z-index: 1002;
+        z-index: 2000;
     }
 
     .contact-info {
@@ -474,6 +477,10 @@ footer {
 @media (max-width: 480px) {
     .section {
         padding: 6rem 1rem;
+    }
+
+    #home {
+        padding-top: 6rem;
     }
 
     .section h1 {
