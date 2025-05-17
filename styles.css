@@ -116,7 +116,6 @@ body.dark-mode .section {
 
 #home {
     position: relative;
-    padding-top: 5rem;
 }
 
 .profile-container {
@@ -307,10 +306,8 @@ body.dark-mode .contact-form input, body.dark-mode .contact-form textarea {
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
     border-color: #1e3a8a;
-    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.2);
-}
-
-.contact-form button {
+    box-shadow: 0 0 0 4px rgba(30, 58, 138
+    .contact-form button {
     padding: 1rem;
     background: linear-gradient(90deg, #1e3a8a, #3b82f6);
     color: #ffedd5;
@@ -426,13 +423,10 @@ footer {
         background: linear-gradient(135deg, #1e3a8a, #3b82f6);
         padding-top: 5rem;
         z-index: 1000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
     }
 
     .nav-links.active {
         display: flex;
-        opacity: 1;
     }
 
     .nav-links a {
@@ -480,7 +474,7 @@ footer {
     }
 
     #home {
-        padding-top: 6rem;
+        padding-top: 7rem;
     }
 
     .section h1 {
@@ -493,10 +487,5 @@ footer {
 
     .contact-form {
         padding: 1.5rem;
-    }
-
-    .profile-photo {
-        width: 120px;
-        height: 120px;
     }
 }
