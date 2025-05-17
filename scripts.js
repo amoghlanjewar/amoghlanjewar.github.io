@@ -26,17 +26,20 @@ function toggleMode() {
 // Mobile menu toggle
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-    console.log('Menu toggled, active:', navLinks.classList.contains('active')); // Debug log
+    if (navLinks) {
+        navLinks.classList.toggle('active');
+        console.log('Menu toggled, active:', navLinks.classList.contains('active')); // Debug (remove after testing)
+    } else {
+        console.error('Nav links not found. Check .nav-links in index.html');
+    }
 }
 
 // Close menu on outside click
 document.addEventListener('click', (e) => {
     const navLinks = document.querySelector('.nav-links');
     const hamburger = document.querySelector('.hamburger');
-    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+    if (navLinks && navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
         navLinks.classList.remove('active');
-        console.log('Menu closed via outside click'); // Debug log
     }
 });
 
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Prevent image interaction and check photo loading
+// Prevent image interaction
 document.addEventListener('DOMContentLoaded', () => {
     const profilePhoto = document.querySelector('.profile-photo');
     if (profilePhoto) {
@@ -68,15 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
             }
         });
-        // Check if photo loads
-        profilePhoto.addEventListener('load', () => {
-            console.log('Profile photo loaded successfully');
-        });
-        profilePhoto.addEventListener('error', () => {
-            console.error('Failed to load profile photo. Check path: IMG_20211015_213813.jpg');
-        });
-    } else {
-        console.error('Profile photo element not found. Check .profile-photo in index.html');
     }
 });
 
