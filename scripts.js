@@ -27,6 +27,7 @@ function toggleMode() {
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
+    console.log('Menu toggled, active:', navLinks.classList.contains('active')); // Debug log
 }
 
 // Close menu on outside click
@@ -35,6 +36,7 @@ document.addEventListener('click', (e) => {
     const hamburger = document.querySelector('.hamburger');
     if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
         navLinks.classList.remove('active');
+        console.log('Menu closed via outside click'); // Debug log
     }
 });
 
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Prevent image interaction
+// Prevent image interaction and check photo loading
 document.addEventListener('DOMContentLoaded', () => {
     const profilePhoto = document.querySelector('.profile-photo');
     if (profilePhoto) {
@@ -66,6 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
             }
         });
+        // Check if photo loads
+        profilePhoto.addEventListener('load', () => {
+            console.log('Profile photo loaded successfully');
+        });
+        profilePhoto.addEventListener('error', () => {
+            console.error('Failed to load profile photo. Check path: IMG_20211015_213813.jpg');
+        });
+    } else {
+        console.error('Profile photo element not found. Check .profile-photo in index.html');
     }
 });
 
@@ -183,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.width);
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         const target = isTouchDevice && attractor.active ? attractor : 
                       window.DeviceMotionEvent && !attractor.active ? 
