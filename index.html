@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="d_4wbaAWCp80GGGyDI6H_6OenBTnv4kBxNSZhQGqNuo" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amogh Ujwal Lanjewar - Physicist</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <title>Warning - High Computational Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: #ffedd5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 1.5s ease-in-out infinite, sparkle 2s ease-in-out infinite;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #ffedd5, #1e3a8a);
+            color: #1f2937;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        @keyframes sparkle {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 237, 213, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 237, 213, 1); }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1 class="animated fadeInDown">Amogh Ujwal Lanjewar</h1>
-            <p class="subtitle">Physicist</p>
-            <nav>
-                <ul>
-                    <li><a href="#areas-of-study">Areas of Study</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://forms.gle/d6jCQK5Xgr4mndD4A" target="_blank" class="cv-button">Download CV</a></li>
-                    <li><button id="dark-mode-toggle" class="dark-mode-toggle">Dark Mode</button></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="areas-of-study">
-                <h2 class="animated fadeInLeft">Areas of Study</h2>
-                <p class="animated fadeInRight">
-                    <strong>
-                        <a href="https://en.wikipedia.org/wiki/Condensed_matter_physics" target="_blank">Condensed Matter Physics</a> |
-                        <a href="https://en.wikipedia.org/wiki/Theoretical_physics" target="_blank">Theoretical Physics</a> |
-                        <a href="https://en.wikipedia.org/wiki/Computational_physics" target="_blank">Computational Physics</a> |
-                        <a href="https://en.wikipedia.org/wiki/Materials_science" target="_blank">Material Science</a>
-                    </strong>
-                </p>
-            </section>
-
-            <section id="about">
-                <h2 class="animated fadeInLeft">About</h2>
-                <p class="animated fadeInRight">
-                    Welcome to my professional page. I am a physicist with specialized expertise in computational physics, theoretical physics, and condensed matter physics. My passion lies in exploring the intricate and often hidden mechanisms that govern the physical world.My work is dedicated to advancing our understanding of the universe through rigorous computational simulations and theoretical models. By examining the behavior and interactions of matter, I aim to uncover fundamental principles that drive the complexities of nature.Science, for me, is a blend of curiosity and precision. Each research project presents a unique opportunity to delve deeper into the mysteries of physics, pushing the boundaries of what we know. I invite you to explore my work and join me in the pursuit of knowledge and discovery.
-                </p>
-                <h3>Education</h3>
-                <ul>
-                    <li>Master of Science (M.Sc.) in Physics, RTM Nagpur University, June 2024</li>
-                    <li>Bachelor of Science (B.Sc.) in Physics, Chemistry & Mathematics, RTM Nagpur University, May 2022</li>
-                    <li>Higher Secondary Certificate (HSC), Maharashtra State Board, March 2019</li>
-                    <li>Secondary School Certificate (SSC), Maharashtra State Board, March 2017</li>
-                </ul>
-            </section>
-
-            <section id="research">
-                <h2 class="animated fadeInLeft">Research</h2>
-                <p class="animated fadeInRight">
-                    <strong>DFT Study of Band Structure and DOS in Crystals: Quantum Simulation Perspectives</strong> submitted to PGTD of Physics, RTM Nagpur University, Nagpur during Semester IV of M.Sc. Physics Program of the session 2023-24.
-                    <br><a href="https://www.academia.edu/resource/work/119823928" target="_blank">View Project</a>
-                </p>
-                <p class="animated fadeInRight">
-                    <strong>Physics Informed Neural Network (PINN): A Comprehensive Study of PINN and its applications</strong> submitted to PGTD of Physics, RTM Nagpur University, Nagpur during Semester III of M.Sc. Physics Program of the session 2023-24.
-                    <br><a href="https://github.com/amoghlanjewar/Amogh-M.Sc.-IIIrd-SEM-Project" target="_blank">View Project</a>
-                </p>
-                <p class="animated fadeInRight">
-                    <strong>IoT Home Automation - Automated Environmental Parameter Sensor using NODEMCU - ESP 8266 Micro-controller</strong>, presented at CSIR-NEERI, Nagpur.
-                </p>
-            </section>
-
-            <section id="contact">
-                <h2 class="animated fadeInLeft">Contact</h2>
-                <p class="animated fadeInRight">LinkedIn: <a href="www.linkedin.com/in/amoghlanjewar" target="_blank">www.linkedin.com/in/amoghlanjewar</a></p>
-                <p class="animated fadeInRight">Email: <a href="mailto:amoghlanjewar@gmail.com">amoghlanjewar@gmail.com</a></p>
-                <p class="animated fadeInRight">Webpage: <a href="https://amoghlanjewar.github.io/" target="_blank">https://amoghlanjewar.github.io/</a></p>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 Amogh Ujwal Lanjewar. All rights reserved.</p>
-        </footer>
+        <div class="emoji">😊✨</div>
+        <h1>High Computational Resources Ahead!</h1>
+        <p>This website uses advanced physics-based particle simulations that may require significant CPU or GPU resources. For the best experience, ensure your device is ready!</p>
+        <a href="main.html" class="btn">Let's Go!</a>
     </div>
 </body>
 </html>
