@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+<script src="gpu-particles.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="d_4wbaAWCp80GGGyDI6H_6OenBTnv4kBxNSZhQGqNuo" />
+    <title>Amogh Ujwal Lanjewar - Physicist</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fallback CSS */
+        body { font-family: Arial, sans-serif; background: #ffedd5; color: #1f2937; margin: 0; }
+        #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .navbar { background: #1e3a8a; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar a { color: #ffedd5; text-decoration: none; }
+        .section { padding: 5rem 1rem; text-align: center; min-height: 100vh; }
+        .contact-form input, .contact-form textarea { padding: 0.8rem; border: 1px solid #1e3a8a; }
+        .contact-form button { padding: 0.8rem; background: #ffedd5; color: #1f2937; border: none; }
+        footer { background: #1e3a8a; color: #ffedd5; text-align: center; padding: 1rem; }
+    </style>
+</head>
+<body class="light-mode">
+    <canvas id="particle-canvas"></canvas>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
+            <a href="https://forms.gle/d6jCQK5Xgr4mndD4A" target="_blank">Download CV</a>
+        </div>
+        <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+    </nav>
+
+    <section id="home" class="section">
+        <div class="profile-container">
+            <img src="IMG_20211015_213813.jpg" alt="Amogh Ujwal Lanjewar" class="profile-photo animated fadeInDown">
+        </div>
+        <h1 class="animated fadeInDown">Amogh Ujwal Lanjewar</h1>
+        <p class="animated fadeInUp">Physicist | Researcher | Innovator</p>
+        <p class="areas-of-study animated fadeInUp">
+            <strong>
+                <a href="https://en.wikipedia.org/wiki/Condensed_matter_physics" target="_blank">Condensed Matter Physics</a> |
+                <a href="https://en.wikipedia.org/wiki/Theoretical_physics" target="_blank">Theoretical Physics</a> |
+                <a href="https://en.wikipedia.org/wiki/Computational_physics" target="_blank">Computational Physics</a> |
+                <a href="https://en.wikipedia.org/wiki/Materials_science" target="_blank">Material Science</a>
+            </strong>
+        </p>
+    </section>
+
+    <section id="about" class="section">
+        <h1 class="animated fadeInLeft">About Me</h1>
+        <p class="animated fadeInRight">Welcome to my professional page. I am a physicist with specialized expertise in computational physics, theoretical physics, and condensed matter physics. My passion lies in exploring the intricate and often hidden mechanisms that govern the physical world. My work is dedicated to advancing our understanding of the universe through rigorous computational simulations and theoretical models. Science, for me, is a blend of curiosity and precision. Each research project presents a unique opportunity to delve deeper into the mysteries of physics, pushing the boundaries of what we know.</p>
+    </section>
+
+    <section id="education" class="section">
+        <h1 class="animated fadeInLeft">Education</h1>
+        <ul class="education-list animated fadeInRight">
+            <li><strong>Master of Science (M.Sc.) in Physics</strong> - RTM Nagpur University, June 2024</li>
+            <li><strong>Bachelor of Science (B.Sc.) in Physics, Chemistry & Mathematics</strong> - RTM Nagpur University, May 2022</li>
+            <li><strong>Higher Secondary Certificate (HSC)</strong> - Maharashtra State Board, March 2019</li>
+            <li><strong>Secondary School Certificate (SSC)</strong> - Maharashtra State Board, March 2017</li>
+        </ul>
+    </section>
+
+    <section id="research" class="section">
+        <h1 class="animated fadeInLeft">Research</h1>
+        <ul class="projects-list animated fadeInRight">
+            <li><strong>DFT Study of Band Structure and DOS in Crystals: Quantum Simulation Perspectives</strong> - Submitted to PGTD of Physics, RTM Nagpur University, Nagpur during Semester IV of M.Sc. Physics Program, 2023-24. <a href="https://www.academia.edu/resource/work/119823928" target="_blank">View Project</a></li>
+            <li><strong>Physics Informed Neural Network (PINN): A Comprehensive Study of PINN and its applications</strong> - Submitted to PGTD of Physics, RTM Nagpur University, Nagpur during Semester III of M.Sc. Physics Program, 2023-24. <a href="https://github.com/amoghlanjewar/Amogh-M.Sc.-IIIrd-SEM-Project" target="_blank">View Project</a></li>
+            <li><strong>IoT Home Automation - Automated Environmental Parameter Sensor using NODEMCU - ESP 8266 Micro-controller</strong> - Presented at CSIR-NEERI, Nagpur.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h1 class="animated fadeInLeft">Contact Me</h1>
+        <div class="contact-info animated fadeInRight">
+            <a href="https://www.linkedin.com/in/amoghlanjewar" target="_blank" class="contact-icon">LinkedIn</a>
+            <a href="mailto:amoghlanjewar@gmail.com" class="contact-icon">Email</a>
+        </div>
+        <form class="contact-form animated fadeInUp" action="https://formspree.io/f/mpwdowbz" method="POST">
+            <label>
+                Your Name:
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                Your Email:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Your Message:
+                <textarea name="message" rows="6" required></textarea>
+            </label>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Amogh Ujwal Lanjewar. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
