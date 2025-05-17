@@ -55,7 +55,6 @@ body.dark-mode {
     font-size: 1.8rem;
     color: #ffedd5;
     cursor: pointer;
-    z-index: 1001;
 }
 
 .nav-links {
@@ -72,13 +71,12 @@ body.dark-mode {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
     background-color: rgba(255, 237, 213, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .toggle-mode {
@@ -91,7 +89,6 @@ body.dark-mode {
     cursor: pointer;
     color: #ffedd5;
     transition: transform 0.4s ease;
-    z-index: 1001;
 }
 
 .toggle-mode:hover {
@@ -166,7 +163,6 @@ body.dark-mode .profile-photo {
     margin-bottom: 1rem;
     color: #1f2937;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 2;
 }
 
 body.dark-mode .section h1 {
@@ -179,7 +175,6 @@ body.dark-mode .section h1 {
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: #1e3a8a;
-    z-index: 2;
 }
 
 body.dark-mode .section h2 {
@@ -191,7 +186,6 @@ body.dark-mode .section h2 {
     font-size: 1.2rem;
     margin: 0 auto;
     color: #1f2937;
-    z-index: 2;
 }
 
 body.dark-mode .section p {
@@ -204,7 +198,6 @@ body.dark-mode .section p {
     text-align: left;
     max-width: 800px;
     width: 100%;
-    z-index: 2;
 }
 
 .education-list li, .projects-list li {
@@ -216,7 +209,6 @@ body.dark-mode .section p {
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    z-index: 2;
 }
 
 body.dark-mode .education-list li, body.dark-mode .projects-list li {
@@ -232,7 +224,6 @@ body.dark-mode .education-list li, body.dark-mode .projects-list li {
     display: flex;
     gap: 2rem;
     margin-bottom: 2rem;
-    z-index: 2;
 }
 
 .contact-icon {
@@ -243,7 +234,6 @@ body.dark-mode .education-list li, body.dark-mode .projects-list li {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 2;
 }
 
 body.dark-mode .contact-icon {
@@ -267,7 +257,6 @@ body.dark-mode .contact-icon {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    z-index: 2;
 }
 
 body.dark-mode .contact-form {
@@ -280,7 +269,6 @@ body.dark-mode .contact-form {
     font-weight: 500;
     font-size: 1.1rem;
     color: #1f2937;
-    z-index: 2;
 }
 
 body.dark-mode .contact-form label {
@@ -294,7 +282,6 @@ body.dark-mode .contact-form label {
     font-size: 1.1rem;
     background: rgba(255, 255, 255, 0.05);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    z-index: 2;
 }
 
 body.dark-mode .contact-form input, body.dark-mode .contact-form textarea {
@@ -306,8 +293,10 @@ body.dark-mode .contact-form input, body.dark-mode .contact-form textarea {
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
     border-color: #1e3a8a;
-    box-shadow: 0 0 0 4px rgba(30, 58, 138
-    .contact-form button {
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.2);
+}
+
+.contact-form button {
     padding: 1rem;
     background: linear-gradient(90deg, #1e3a8a, #3b82f6);
     color: #ffedd5;
@@ -318,7 +307,6 @@ body.dark-mode .contact-form input, body.dark-mode .contact-form textarea {
     font-weight: 600;
     font-size: 1.1rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 2;
 }
 
 .contact-form button:hover {
@@ -332,7 +320,6 @@ body.dark-mode .contact-form input, body.dark-mode .contact-form textarea {
     margin: 0 0.8rem;
     font-weight: 500;
     transition: color 0.3s ease, text-shadow 0.3s ease;
-    z-index: 2;
 }
 
 body.dark-mode .areas-of-study a {
@@ -409,6 +396,7 @@ footer {
         position: absolute;
         left: 2rem;
         top: 1.2rem;
+        z-index: 1001;
     }
 
     .nav-links {
@@ -426,7 +414,7 @@ footer {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important; /* Ensure override */
     }
 
     .nav-links a {
@@ -443,7 +431,7 @@ footer {
     }
 
     #home {
-        padding-top: 7rem;
+        padding-top: 7rem; /* Clear navbar */
     }
 
     .section h1 {
@@ -474,7 +462,7 @@ footer {
     }
 
     #home {
-        padding-top: 7rem;
+        padding-top: 7rem; /* Clear navbar */
     }
 
     .section h1 {
@@ -487,5 +475,10 @@ footer {
 
     .contact-form {
         padding: 1.5rem;
+    }
+
+    .profile-photo {
+        width: 200px; /* No 120px override */
+        height: 200px;
     }
 }
