@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     	const particles = [];
-	const N = 250;              // 🚀 Number of particles (Heavy GPU/CPU)
+	const N = 200;              // 🚀 Number of particles (Heavy GPU/CPU)
 	const G = 16000;             // 🧲 Strong gravitational pull
 	const k = 0.25;              // 🔗 Strong spring force (elasticity)
 	const damping = 0.95;        // 💨 Lower damping = more motion, less friction
