@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="d_4wbaAWCp80GGGyDI6H_6OenBTnv4kBxNSZhQGqNuo" />
     <title>Amogh Ujwal Lanjewar - Physicist</title>
+    <!-- Link to the updated stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Fallback CSS if styles.css fails */
-        body { font-family: Arial, sans-serif; background: #ffedd5; color: #1f2937; }
-        .navbar { background: #1e3a8a; padding: 1rem; position: fixed; width: 100%; top: 0; }
-        .navbar a { color: #ffedd5; text-decoration: none; }
-        .section { padding: 5rem 1rem; text-align: center; }
-        .contact-form input, .contact-form textarea { padding: 0.8rem; border: 1px solid #1e3a8a; }
-        .contact-form button { padding: 0.8rem; background: #ffedd5; color: #1f2937; border: none; }
-        footer { background: #1e3a8a; color: #ffedd5; text-align: center; padding: 1rem; }
-    </style>
+    <!-- Link to the PIXI.js library for GPU-accelerated graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+    <!-- Defer loading of the main scripts -->
     <script src="scripts.js" defer></script>
+    <script src="gpu-particles.js" defer></script>
 </head>
 <body class="light-mode">
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -31,13 +28,15 @@
         <button class="toggle-mode" onclick="toggleMode()">🌙</button>
     </nav>
 
+    <!-- Home Section -->
     <section id="home" class="section">
-        <canvas id="particle-canvas"></canvas>
+        <!-- The particle canvas is now created by gpu-particles.js and is not needed here -->
         <div class="profile-container">
             <img src="IMG_20211015_213813.jpg" alt="Amogh Ujwal Lanjewar" class="profile-photo animated fadeInDown">
         </div>
         <h1 class="animated fadeInDown">Amogh Ujwal Lanjewar</h1>
-        <p class="animated fadeInUp">Physicist</p>
+        <h2 class="animated fadeInUp">Physicist</h2>
+        <p class="animated fadeInUp">UGC-DAE-CSR Fellow at Nagpur University</p>
         <p class="areas-of-study animated fadeInUp">
             <strong>
                 <a href="https://en.wikipedia.org/wiki/Condensed_matter_physics" target="_blank">Condensed Matter Physics</a> |
@@ -48,20 +47,22 @@
         </p>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section">
         <h1 class="animated fadeInLeft">About Me</h1>
         <p class="animated fadeInRight">Welcome to my professional page. I am a physicist with specialized expertise in computational physics, theoretical physics, and condensed matter physics.</p>
     </section>
 
+    <!-- Education Section -->
     <section id="education" class="section">
         <h1 class="animated fadeInLeft">Education</h1>
         <ul class="education-list animated fadeInRight">
             <li><strong>Master of Science (M.Sc.) in Physics</strong> - Department of Physics, Nagpur University, June 2024</li>
             <li><strong>Bachelor of Science (B.Sc.) in Physics, Chemistry & Mathematics</strong> - Hislop College, Nagpur University, May 2022</li>
-            
         </ul>
     </section>
 
+    <!-- Research Section -->
     <section id="research" class="section">
         <h1 class="animated fadeInLeft">Research</h1>
         <ul class="projects-list animated fadeInRight">
@@ -70,6 +71,7 @@
         </ul>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <h1 class="animated fadeInLeft">Contact Me</h1>
         <div class="contact-info animated fadeInRight">
@@ -93,10 +95,10 @@
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2025 Amogh Ujwal Lanjewar. All rights reserved.</p>
     </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
-<script src="gpu-particles.js"></script>
+
 </body>
 </html>
